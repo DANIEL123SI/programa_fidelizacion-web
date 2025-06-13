@@ -1,0 +1,135 @@
+/* general.css */
+
+/* Reset y tipografías */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 95%;
+  max-width: none;               /* Sin límite máximo */
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+/* Header común */
+.page-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.page-header a {
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  color: #556;
+  text-decoration: none;
+  transition: color .2s;
+}
+.page-header a:hover {
+  color: #333;
+}
+.page-header h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Si necesitas cards internas, siguen disponibles */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+.card--padded {
+  padding: 1.5rem;
+}
+
+/* Tablas dentro */
+.table-container {
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.table thead {
+
+  color: #fff;
+}
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+.table tbody tr:hover {
+  background: #f1f1f1;
+}
+.table-striped tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background .2s, color .2s;
+  cursor: pointer;
+}
+.btn-primary { background: #007bff; color: #fff; }
+.btn-primary:hover { background: #0069d9; }
+.btn-secondary { background: #6c757d; color: #fff; }
+.btn-secondary:hover { background: #5a6268; }
+.btn-warning { background: #ffc107; color: #212529; }
+.btn-warning:hover { background: #e0a800; }
+.btn-danger { background: #dc3545; color: #fff; }
+.btn-danger:hover { background: #c82333; }
+.btn-success { background: #28a745; color: #fff; }
+.btn-success:hover { background: #218838; }
+
+/* Formularios */
+.form-label {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+.form-control {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.form-control:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.15rem rgba(0,123,255,0.25);
+  outline: none;
+}
+.mb-3 { margin-bottom: 1rem; }
+
+/* Utilidades de espacio */
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.text-center { text-align: center; }
