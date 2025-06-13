@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Actualizar puntos en clientes
         $pdo->prepare("UPDATE clientes SET puntos_actuales = puntos_actuales + ? WHERE id_cliente = ?")
             ->execute([$pts, $id_cliente]);
-        header('Location: puntos.php'); exit;
+        header('Location: admin_puntos.php'); exit;
     }
 
     if ($_POST['form_type'] === 'redeem_points') {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->prepare("UPDATE clientes SET puntos_actuales = ? WHERE id_cliente = ?")
             ->execute([$remaining, $id_cliente]);
 
-        header('Location: puntos.php'); exit;
+        header('Location: admin_puntos.php'); exit;
     }
 }
 ?>
@@ -85,8 +85,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <?php if ($action === 'list'): ?>
-        <a href="puntos.php?action=add" class="btn btn-primary">Registrar Compra</a>
-        <a href="puntos.php?action=redeem" class="btn btn-success">Redimir Puntos</a>
+        <a href="admin_puntos.php?action=add" class="btn btn-primary">Registrar Compra</a>
+        <a href="admin_puntos.php?action=redeem" class="btn btn-success">Redimir Puntos</a>
 
         <!-- Listado de transacciones -->
         <h4 class="mt-4">Transacciones de Puntos</h4>
@@ -184,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="number" name="puntos_acreditados" id="puntos_acreditados" class="form-control" readonly>
                 </div>
                 <button class="btn btn-primary">Registrar</button>
-                <a href="puntos.php" class="btn btn-secondary">Cancelar</a>
+                <a href="admin_puntos.php" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
         <script>
@@ -236,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="number" name="puntos_restantes" id="puntos_restantes" class="form-control" readonly>
                 </div>
                 <button class="btn btn-success" id="btnRedeem" disabled>Redimir</button>
-                <a href="puntos.php" class="btn btn-secondary">Cancelar</a>
+                <a href="admin_puntos.php" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
         <script>

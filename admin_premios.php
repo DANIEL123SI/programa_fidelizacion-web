@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $imgPath = handleUpload('imagen', $error);
             if ($error) {
                 $_SESSION['error'] = $error;
-                header("Location: premios.php?action=" . ($id ? "edit&id={$id}" : "add"));
+                header("Location: admin_premios.php?action=" . ($id ? "edit&id={$id}" : "add"));
                 exit;
             }
         }
@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$nombre, $descr, $pts, $stk, $act, $imgPath]);
         }
 
-        header('Location: premios.php');
+        header('Location: admin_premios.php');
         exit;
     }
 
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $_POST['id'];
         $pdo->prepare("DELETE FROM premios WHERE id_premio = ?")
             ->execute([$id]);
-        header('Location: premios.php');
+        header('Location: admin_premios.php');
         exit;
     }
 }
@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php unset($_SESSION['error']); endif; ?>
 
   <?php if ($action === 'list'): ?>
-    <a href="premios.php?action=add" class="btn btn-primary mb-3">+ Nuevo Premio</a>
+    <a href="admin_premios.php?action=add" class="btn btn-primary mb-3">+ Nuevo Premio</a>
     <table class="table table-striped card">
       <thead>
         <tr>
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           <td><?= $p['stock'] ?></td>
           <td><?= $p['activo'] ? 'Sí':'No' ?></td>
           <td>
-            <a href="premios.php?action=edit&id=<?= $p['id_premio'] ?>"
+            <a href="admin_premios.php?action=edit&id=<?= $p['id_premio'] ?>"
                class="btn btn-sm btn-warning">Editar</a>
             <form method="POST" style="display:inline-block;"
                   onsubmit="return confirm('¿Eliminar este premio?');">
@@ -234,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <button class="btn btn-primary"><?= $id ? 'Actualizar' : 'Guardar' ?></button>
-        <a href="premios.php" class="btn btn-secondary">Cancelar</a>
+        <a href="admin_premios.php" class="btn btn-secondary">Cancelar</a>
       </form>
     </div>
   <?php endif; ?>

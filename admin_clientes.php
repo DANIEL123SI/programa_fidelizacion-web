@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
         $stmt = $pdo->prepare("DELETE FROM clientes WHERE $pk = ?");
         $stmt->execute([$_POST[$pk]]);
     }
-    header('Location: clientes.php');
+    header('Location: admin_clientes.php');
     exit;
 }
 ?>
@@ -171,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST') {
           <button type="submit" class="btn btn-primary">
             <?= $action==='add' ? 'Guardar' : 'Actualizar' ?>
           </button>
-          <a href="clientes.php" class="btn btn-secondary">Cancelar</a>
+          <a href="admin_clientes.php" class="btn btn-secondary">Cancelar</a>
         </form>
       </div>
     <?php endif ?>

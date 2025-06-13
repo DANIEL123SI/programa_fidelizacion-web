@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $pdo->prepare("DELETE FROM beneficios WHERE id_beneficio=?")
             ->execute([$_POST['id']]);
-        header('Location: beneficios.php');
+        header('Location: admin_beneficios.php');
         exit;
     }
 
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ->execute([$empresa,$descripcion,$descuento,$desde,$hasta,$activo,$imagenPath]);
         }
 
-        header('Location: beneficios.php');
+        header('Location: admin_beneficios.php');
         exit;
     }
 }
@@ -214,7 +214,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <button class="btn btn-success"><?= $id? 'Actualizar' : 'Guardar' ?></button>
-        <a href="beneficios.php" class="btn btn-secondary">Cancelar</a>
+        <a href="admin_beneficios.php" class="btn btn-secondary">Cancelar</a>
       </form>
     </div>
   <?php endif; ?>

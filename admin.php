@@ -105,7 +105,6 @@
   <header>
     <h1>Dashboard Administrador</h1>
     <div>
-      <a href="perfil.php" class="btn btn-outline-primary btn-header">Perfil</a>
       <a href="logout.php" class="btn btn-danger btn-header">Cerrar Sesión</a>
     </div>
   </header>

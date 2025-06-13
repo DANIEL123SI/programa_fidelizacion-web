@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['form_type'] ?? '') === 'cr
             ->execute([$id_cliente]);
         $pdo->commit();
 
-        header('Location: cliente.php');
+        header('Location: user_home.php');
         exit;
     }
 }
